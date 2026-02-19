@@ -1,4 +1,4 @@
-import {writeFile,readFile} from "fs/promises";
+import { writeFile, readFile } from "fs/promises";
 import csv from "async-csv";
 // import data from "../data/";
 
@@ -9,10 +9,14 @@ export async function getAllData() {
   return res;
 }
 
-export async function addResult(newObj) {
+export async function addResult(score) {
   const data = await read_file_json();
-  data.push(newObj);
-  await write_file_json(data);
+
+  const newObj = {
+    score: Number(data.score) + Number(score),
+    date: new Date(),
+  };
+  await write_file_json(newObj);
   return true;
 }
 
@@ -29,8 +33,8 @@ export async function write_file_json(data) {
 export async function read_file_json() {
   try {
     const data = await readFile("./data/player.json", "utf8");
-    return JSON.parse(data);
+    return data ? JSON.parse(data) : {};
   } catch (error) {
-    return [];
+    return { score: 0, date: "" };
   }
 }

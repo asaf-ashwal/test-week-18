@@ -6,8 +6,7 @@ export async function playerC(req, res) {
       return res.status(400).send("Most send score !!!");
     const { score } = req.body;
     const result = await playerS(score);
-    res.status(500).send("Request fail;");
-    if (res !== true) return res.status(500).send("Request fail;");
+    if (result !== true) return res.status(500).send("Request fail;");
     res.json(result);
   } catch (error) {
     console.error(error);

@@ -1,0 +1,50 @@
+.systemForm {
+  display: flex;
+  background-color: rgb(184, 189, 189);
+  align-items: center;
+  font-size: larger;
+}
+table {
+  text-align: center;
+  width: 99vw;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table td {
+  font-size: larger;
+  border: 1px solid black;
+}
+table th {
+  border: 1px solid black;
+  font-size: x-large;
+}
+table tr:nth-of-type(odd) {
+  background-color: aquamarine;
+}
+table tr:nth-of-type(even) {
+  background-color: antiquewhite;
+}
+
+.systemForm input {
+  width: 23vw;
+  height: 30px;
+  margin-left: 10px;
+}
+.systemForm label {
+  margin-left: 10px;
+}
+
+table tr:hover {
+  background-color: rgb(168, 168, 168);
+}
+button {
+  margin: 1rem 20px;
+  padding: 10px 20px;
+  font-size: larger;
+  background-color: rgb(69, 113, 235);
+  color: white;
+  /* border-radius: 18px; */
+}
+button:hover {
+  transform: scale(1.1);
+}
