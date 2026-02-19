@@ -5,7 +5,6 @@ import { GlobalContext } from "../../App";
 function index() {
   const { dataToShow, data, setDataToShow } = useContext(GlobalContext);
   function filterData({ yearGreat, yearLest, cityContry }) {
-    console.log('data: ',data);
     return data.filter((obj) => {
       return (
         (obj.country_txt.toLowerCase().includes(cityContry.toLowerCase()) ||
@@ -23,7 +22,6 @@ function index() {
     const cityContry = search.current.value;
     const res = filterData({ yearGreat, yearLest, cityContry });
     setDataToShow(res);
-    console.log(dataToShow.length);
   }
   const search = useRef();
   const greater = useRef();
